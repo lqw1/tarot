@@ -1,0 +1,170 @@
+.home-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: #202547;
+  overflow: hidden;
+  position: relative;
+
+  // PC端样式
+  @media (min-width: 600px) {
+    width: 23.4375rem; // 375px/16
+    height: 100vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.center-pile,
+.shuffle-card,
+.circle-card {
+  width: 3.2rem;
+  height: 5rem;
+}
+
+.circle-card {
+  &:hover {
+    border: 1px solid #fff;
+  }
+}
+
+.center-pile {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7rem;
+  height: 10.8rem;
+  /* transform: translate(-50%, -50%); */
+  box-shadow: 0 0.25rem 1.5rem #0008;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.shuffle-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7rem;
+  height: 10.8rem;
+  /* transform: translate(-50%, -50%); */
+  box-shadow: 0 0.25rem 1.5rem #0006;
+  border-radius: 0.75rem;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.center-show-card {
+  box-shadow: 0 8px 32px #000a;
+  border-radius: 10px;
+  background: #fff;
+}
+
+// .cards-choose {
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   gap: 10px;
+//   position: absolute;
+//   bottom: 80px;
+//   div {
+//     width: 5rem;
+//     height: 9rem;
+//     // background: #fff;
+//     border-radius: 10px;
+//     // box-shadow: 0 8px 32px #000a;
+//   }
+// }
+
+.cards-choose {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 10px;
+  position: absolute;
+  bottom: 6rem;
+  width: 100%;
+  & > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.result-slot {
+  width: 5rem;
+  height: 9rem;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.03);
+}
+.result-img {
+  width: 5rem;
+  height: 9rem;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.card-name {
+  color: #fff;
+  display: inline-flex;
+  padding-top: 10px;
+}
+
+
+.question-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .question-title {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .question-button {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .question-tips {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 12px;
+  }
+}
+
+.cards-choose-button {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.result-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .result-title {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 30px;
+    flex-shrink: 1;
+  }
+  .result-content {
+    color: #fff;
+    overflow-y: auto;
+    padding: 20px;
+    line-height: 110%;
+    flex: 1;
+    white-space:pre-wrap;
+  }
+}

@@ -1,0 +1,69 @@
+.skeleton:not(:last-child) {
+  position: relative;
+}
+
+.skeleton:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--zui-color-gs-50);
+}
+
+.item {
+  position: relative;
+  height: 16px;
+  width: 100%;
+  background-color: var(--zui-color-gs-40);
+  overflow: hidden;
+  z-index: 0;
+  background-position: 0 0;
+  margin-block-start: 12px;
+}
+
+.item:first-child {
+  margin-block-start: 0;
+}
+
+.paragraph {
+  @extend .item;
+}
+
+.title {
+  @extend .item;
+
+  width: 30%;
+}
+
+.active {
+  .item::after {
+    position: absolute;
+    top: 0;
+    inset-inline-end: -150%;
+    bottom: 0;
+    inset-inline-start: -150%;
+    background: linear-gradient(
+      90deg,
+      rgb(0 0 0 / 6%) 25%,
+      rgb(0 0 0 / 15%) 37%,
+      rgb(0 0 0 / 6%) 63%
+    );
+    animation-name: skeleton-loading;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    content: "";
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    transform: translateX(-37.5%);
+  }
+
+  100% {
+    transform: translateX(37.5%);
+  }
+}
