@@ -1,7 +1,7 @@
 # ENV
 
 `.local.env` 是本地 localhost 的环境变量
-`.env.dev` 是 dev 环境的环境变量
+`.env.development` 是 dev 环境的环境变量
 `.env.test` 是 test 环境的环境变量
 `.env.prod` 是 prod 环境的环境变量
 
