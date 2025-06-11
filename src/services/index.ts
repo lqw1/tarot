@@ -15,7 +15,7 @@ const config = {
   // 默认地址请求地址，可在 .env 开头文件中修改
   baseURL: process.env.REACT_APP_API_BASE_URL as string,
   // 设置超时时间（10s）
-  timeout: 99999999999,
+  timeout: 600000,
   // 跨域时候允许携带凭证
   // withCredentials: true,
 };
