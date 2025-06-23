@@ -10,7 +10,7 @@ import { HttpStatus } from '../types/commonTypes';
 import { checkStatus } from './helper/checkStatus';
 
 // const axiosCanceler = new AxiosCanceler();
- console.log(process.env.REACT_APP_API_BASE_URL, '999')
+//  console.log(process.env.REACT_APP_API_BASE_URL, '999')
 const config = {
   // 默认地址请求地址，可在 .env 开头文件中修改
   baseURL: process.env.REACT_APP_API_BASE_URL as string,

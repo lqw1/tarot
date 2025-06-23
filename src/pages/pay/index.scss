@@ -1,0 +1,26 @@
+.pay-page {
+  width: 375px;
+  height: 100vh;
+  margin: 0 auto;
+  background: #202547;
+  color: #fff;
+  padding: 0 30px;
+  padding-top: 50px;
+  .ant-input {
+    margin-top: 30px;
+  }
+
+  .ant-btn {
+    margin-top: 30px;
+    width: 100%;
+  }
+  p {
+    margin-top: 20px;
+  }
+}
+
+.pay-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

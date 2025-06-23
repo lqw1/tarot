@@ -33,7 +33,7 @@ const Home: FC = () => {
 
   console.log(selectedCards, 'selectedCards')
 
-  const { send, result, loading } = useChat({ selectedCardsName, selectedCardsPosition, question });
+  const { send, sendSSE, result, loading } = useChat({ selectedCardsName, selectedCardsPosition, question });
 
   const handleCardClick = (idx) => {
     if (selectedCards.length === 3 || removedIndexes.includes(idx)) return;
@@ -55,7 +55,8 @@ const Home: FC = () => {
 
   const handleUnscramble = () => {
     setStage('result')
-    send();
+    // send();
+    sendSSE()
   }
 
   // 洗牌动画参数
@@ -84,10 +85,10 @@ const Home: FC = () => {
             </div>
             <Button className='question-button' type='primary' onClick={() => setStage('pile')}>开始</Button>
             <p className='question-tips'>
-              {/* 1.抽牌的时候请在心里默念你的问题 */}
+              1.不能问“多久”、“多长” 等等时间问题, 最好固定一个半年内 或者 具体事务
             </p>
              <p className='question-tips'>
-              {/* 1.生成结果有点慢，请耐心等待 */}
+              2.生成结果有点慢，请耐心等待
             </p>
           </div>
         ) }

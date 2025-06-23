@@ -22,6 +22,17 @@ const customRouter: Array<RouteObject> = [
           title: "home",
           key: "home",
         },
+      },
+      {
+        path: "/pay",
+        element: lazyLoad(
+          React.lazy(() => import("./../../pages/pay/index"))
+        ),
+        meta: {
+          requiresAuth: true,
+          title: "pay",
+          key: "pay",
+        },
       }
     ],
   },
