@@ -158,11 +158,13 @@
     font-size: 18px;
     padding-top: 30px;
     flex-shrink: 1;
+    padding-bottom: 20px;
   }
   .result-content {
     color: #fff;
     overflow-y: auto;
     padding: 20px;
+    padding-top: 0;
     line-height: 110%;
     flex: 1;
     white-space:pre-wrap;

@@ -9,6 +9,10 @@ interface ChatTarotProps {
   question: string
 }
 
+const getDate = () => {
+  return new Date().toLocaleDateString();
+}
+
 const useChat = ({ selectedCardsName, selectedCardsPosition, question }: ChatTarotProps) => {
   // const [message, setMessage] = useState('');
   const [result, setResult] = useState("")
@@ -18,6 +22,8 @@ const useChat = ({ selectedCardsName, selectedCardsPosition, question }: ChatTar
       return `${name}(${selectedCardsPosition[index]})`
     })
   }, [selectedCardsName, selectedCardsPosition])
+
+  
 
   // console.log(tarots, 'TTTT')
   const sendSSE = async () => {
@@ -30,7 +36,7 @@ const useChat = ({ selectedCardsName, selectedCardsPosition, question }: ChatTar
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: `
-        帮我详细介绍每张牌，我希望你给至少包含：出牌阵结构与象征意义、分牌深度解析、关键矛盾与建议、最终启示这几项
+        帮我详细介绍每张牌，我希望你给至少包含：出牌阵结构与象征意义、分牌深度解析、关键矛盾与建议、最终启示这几项。如果你给出的结果中包含年份、日期的指示，请注意现在的日期是${getDate()}
         1.问题：${question}
         2.我的三张牌分别是${tarots.join(",")}`,
         }),

@@ -36,6 +36,7 @@ const Home: FC = () => {
   const { send, sendSSE, result, loading } = useChat({ selectedCardsName, selectedCardsPosition, question });
 
   const handleCardClick = (idx) => {
+    if (showingCard) return; // 动画期间禁止点击
     if (selectedCards.length === 3 || removedIndexes.includes(idx)) return;
     setRemovedIndexes(prev => [...prev, idx]);
     // 随机抽取未被抽过的牌
@@ -85,7 +86,7 @@ const Home: FC = () => {
             </div>
             <Button className='question-button' type='primary' onClick={() => setStage('pile')}>开始</Button>
             <p className='question-tips'>
-              1.不能问“多久”、“多长” 等等时间问题, 最好固定一个半年内 或者 具体事务
+              1.不能问"多久"、"多长" 等等时间问题, 最好固定一个半年内 或者 具体事务
             </p>
              <p className='question-tips'>
               2.生成结果有点慢，请耐心等待
